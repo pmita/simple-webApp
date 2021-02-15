@@ -1,0 +1,15 @@
+$main-color: rgb(231,210,255);
+
+$header1: 4rem;
+$header2: 3.2rem;
+
+@mixin flex($direction, $justify, $align){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+
+@import 'global';
+@import 'landingPage';

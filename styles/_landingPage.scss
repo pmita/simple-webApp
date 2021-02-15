@@ -1,0 +1,90 @@
+header{
+    min-height: 20vh;
+    width: 60%;
+    margin: auto;
+    @include flex(row, center, center);
+    h1{
+        font-size: $header1;
+    }
+}
+
+form{
+    min-height: 20vh;
+    @include flex(row, center, center);
+    input,button{
+        padding: 0.5rem;
+        font-size: 2rem;
+        border: none;
+        background: white;
+    }
+    button{
+        color: $main-color;
+        background: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover{
+            background: $main-color;
+            color: white;
+        }
+    }
+}
+
+.todo-container{
+    min-height: 50vh;
+    width: 80%;
+    margin: auto;
+
+    .todo-list{
+        @include flex(row, center, center);
+        flex-wrap: wrap;
+        .box{
+            flex: 1 1 30rem;
+            min-height: 40px;
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin:25px;
+            transition: all 0.5s ease;
+            button{
+                padding: 5px;
+                margin: 0 5px;
+                border: none;
+                i{
+                    pointer-events: none;
+                }
+                &.check{
+                    color: white;
+                    background: rgb(69, 190, 32);
+                    &:hover{
+                        color: rgb(69, 190, 32);
+                        background: white;
+                    }
+                }
+                &.trash{
+                    color: white;
+                    background: rgb(218, 60, 33);
+                    &:hover{
+                        color: rgb(218, 60, 33);
+                        background: white;
+                    }
+                }
+            }
+            @include flex(row, space-evenly, center);
+            li{
+                flex:1;
+                list-style-type: none;
+            }
+        }
+        .completed{
+            opacity: 0.5;
+            li{
+                text-decoration: line-through;
+            }
+        }
+        .collapse{
+            transform: translateY(8rem) rotateZ(20deg);
+        }
+    }
+
+
+}
